@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollvw"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:background="#a1dbcd">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shortest Job First Scheduling"
+        android:textColor="#FF0000"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="\n\nOther name of this algorithm is Shortest-Process-Next (SPN).\n
+\n\nShortest-Job-First (SJF) is a non-preemptive discipline in which waiting job (or process) with the smallest estimated run-time-to-completion is run next. In other words, when CPU is available, it is assigned to the process that has smallest next CPU burst.
+
+\n\nThe SJF scheduling is especially appropriate for batch jobs for which the run times are known in advance. Since the SJF scheduling algorithm gives the minimum average time for  a given set of processes, it is probably optimal.
+
+\n\nThe SJF algorithm favors short jobs (or processors) at the expense of longer ones.
+
+\n\nThe obvious problem with SJF scheme is that it requires precise knowledge of how long a job or process will run, and this information is not usually available.
+
+\n\nThe best SJF algorithm can do is to rely on user estimates of run times.
+
+\n\nIn the production environment where the same jobs run regularly, it may be possible to provide reasonable estimate of run time, based on the past performance of the process. But in the development environment users rarely know how their program will execute.
+
+\n\nLike FCFS, SJF is non preemptive therefore, it is not useful in timesharing environment in which reasonable response time must be guaranteed.\n\n"
+        android:textColor="#000000"/>
+
+    </LinearLayout>
+
+</ScrollView>
+

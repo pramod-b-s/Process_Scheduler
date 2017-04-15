@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollvw"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:background="#a1dbcd">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="First Come First Serve Scheduling"
+        android:textColor="#FF0000"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="\nOther names of this algorithm are:\nFirst-In-First-Out (FIFO)\nRun-to-Completion\nRun-Until-Done\n
+\nPerhaps,First-Come-First-Served algorithm is the simplest scheduling algorithm is the simplest scheduling algorithm. Processes are
+dispatched according to their arrival time on the ready queue. Being a nonpreemptive discipline, once a process has a CPU, it runs to
+completion. The FCFS scheduling is fair in the formal sense or human sense of fairness but it is unfair in the sense that long jobs
+make short jobs wait and unimportant jobs make important jobs wait.\n
+\n\nFCFS is more predictable than most of other schemes since it offers time. FCFS scheme is not useful in scheduling interactive users
+because it cannot guarantee good response time. The code for FCFS scheduling  is simple to write and understand. One of the major
+drawback of this scheme is that the average waiting time is often quite long.\n
+\n\nThe First-Come-First-Served algorithm is rarely used as a master scheme in modern operating systems but it is often embedded within other schemes.\n\n"
+        android:textColor="#000000"/>
+
+    </LinearLayout>
+
+</ScrollView>

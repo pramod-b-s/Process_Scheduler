@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollvw"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:background="#a1dbcd">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Priority Scheduling"
+        android:textColor="#FF0000"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="\n\nPriority scheduling can be either preemptive or non preemptive\n
+\nA preemptive priority algorithm will preemptive the CPU if the priority of the newly arrival process is higher than the priority of the currently running process.
+\nA non-preemptive priority algorithm will simply put the new process at the head of the ready queue.\n\n
+
+\n\nA major problem with priority scheduling is indefinite blocking or starvation. A solution to the problem of indefinite blockage of the low-priority process is aging. Aging is a technique of gradually increasing the priority of processes that wait in the system for a long period of time.
+\n
+
+\nThe basic idea is straightforward: each process is assigned a priority, and priority is allowed to run. Equal-Priority processes are scheduled in FCFS order. The shortest-Job-First (SJF) algorithm is a special case of general priority scheduling algorithm.
+\n
+\nAn SJF algorithm is simply a priority algorithm where the priority is the inverse of the (predicted) next CPU burst. That is, the longer the CPU burst, the lower the priority and vice versa.
+
+\nPriority can be defined either internally or externally. Internally defined priorities use some measurable quantities or qualities to compute priority of a process.
+\n
+\n\nExamples of Internal priorities are\n
+\nTime limits.
+\nMemory requirements.
+\nFile requirements,
+ \n   for example, number of open files.
+\nCPU Vs I/O requirements.\n
+
+
+\n\nExternally defined priorities are set by criteria that are external to operating system such as\n
+\nThe importance of process.
+\nType or amount of funds being paid for computer use.
+\nThe department sponsoring the work.
+\nPolitics.
+\n\n"
+        android:textColor="#000000"/>
+
+    </LinearLayout>
+</ScrollView>
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollvw"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:background="#a1dbcd">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shortest Remaining Time First Scheduling"
+        android:textColor="#FF0000"
+        android:textSize="20dp"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="\n\nThe SRTF is the preemptive counterpart of SJF and useful in time-sharing environment.
+
+\n\nIn SRTF scheduling, the process with the smallest estimated run-time to completion is run next, including new arrivals.
+
+\n\nIn SJF scheme, once a job begin executing, it run to completion.
+However in SRTF scheme, a running process may be preempted by a new arrival process with shortest estimated run-time.
+
+\n\nThe algorithm SRTF has higher overhead than its counterpart SJF.
+
+\n\nThe SRTF must keep track of the elapsed time of the running process and must handle occasional preemptions.
+In this scheme, arrival of small processes will run almost immediately. However, longer jobs have even longer mean waiting time.\n\n"
+        android:textColor="#000000"/>
+
+    </LinearLayout>
+
+</ScrollView>

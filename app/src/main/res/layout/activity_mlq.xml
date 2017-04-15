@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollvwmlq"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:background="#a1dbcd">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Multilevel Queue Scheduling"
+        android:textColor="#FF0000"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="\n\nAnother class of scheduling algorithms has been created for situations in which processes are easily classified into different groups.
+\nFor example, a common division is made between foreground (interactive) processes and background (batch) processes. These two types of processes have different response-time requirements and so may have different scheduling needs. \n\nIn addition, foreground processes may have priority (externally defined) over background processes.
+\nA multilevel queue scheduling algorithm partitions the ready queue into several separate queues. \n\nThe processes are permanently assigned to
+one queue, generally based on some property of the process, such as memory size, process priority, or process type. Each queue has its own scheduling
+algorithm. \n\nFor example, separate queues might be used for foreground and background processes. The foreground queue might be scheduled by an RR
+algorithm, while the background queue is scheduled by an FCFS algorithm. \n\nIn addition, there must be scheduling among the queues, which is commonly
+implemented as fixed-priority preemptive scheduling. \nFor example, the foreground queue may have absolute priority over the background queue.\n\n"
+        android:textColor="#000000"/>
+
+    </LinearLayout>
+
+</ScrollView>

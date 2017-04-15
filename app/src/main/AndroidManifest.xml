@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.google.pramodbs.process_scheduling">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/oslogo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".fcfsActivity" />
+        <activity android:name=".sjfActivity" />
+        <activity android:name=".srtfActivity" />
+        <activity android:name=".npprioActivity" />
+        <activity android:name=".pempprioActivity" />
+        <activity
+            android:name=".rrActivity"
+            android:label="@string/title_activity_rr"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".mlqActivity" />
+        <activity android:name=".SimulationActivity"></activity>
+    </application>
+
+</manifest>
