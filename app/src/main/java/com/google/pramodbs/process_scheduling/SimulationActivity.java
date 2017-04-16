@@ -124,26 +124,6 @@ public class SimulationActivity extends AppCompatActivity implements View.OnClic
         return q[++f];
     }
 
-    /*public void nq1(int x){
-        q1[++r1]=x;
-        size1++;
-    }
-
-    public int dq1(){
-        size1--;
-        return q1[++f1];
-    }
-
-    public void nq2(int x){
-        q2[++r2]=x;
-        size2++;
-    }
-
-    public int dq2(){
-        size2--;
-        return q2[++f2];
-    }*/
-
 
     public int done(int n){
         int i;
@@ -384,13 +364,13 @@ public class SimulationActivity extends AppCompatActivity implements View.OnClic
             ganttText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
             ganttText.setText("Gantt Chart");
             ganttText.setTextSize(20);
-            ganttText.setTextColor(parseColor("#008000"));
+            ganttText.setTextColor(parseColor("#FF8C00"));
             linearLayout.addView(ganttText);
 
             for(i=0;i<procount;i++) {
                 TextView colorText = new TextView(this);
                 colorText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
-                colorText.setText("Color " + i+"  -  "+colors[i]);
+                colorText.setText("Process " + i+"  -  "+colors[i]);
                 colorText.setTextSize(15);
                 linearLayout.addView(colorText);
             }
@@ -398,43 +378,43 @@ public class SimulationActivity extends AppCompatActivity implements View.OnClic
             for(i=0;i<procount;i++) {
                 if (i == 0) {
                     paint.setColor(parseColor("#FF0000"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10, 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 1) {
                     paint.setColor(parseColor("#FF8C00"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 2) {
                     paint.setColor(parseColor("#FFD700"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 3) {
                     paint.setColor(parseColor("#808000"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 4) {
                     paint.setColor(parseColor("#7CFC00"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 5) {
                     paint.setColor(parseColor("#3CB371"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 6) {
                     paint.setColor(parseColor("#00FF7F"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 7) {
                     paint.setColor(parseColor("#00CED1"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 8) {
                     paint.setColor(parseColor("#191970"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 9) {
                     paint.setColor(parseColor("#DA70D6"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
             }
 
@@ -548,6 +528,13 @@ public class SimulationActivity extends AppCompatActivity implements View.OnClic
                 btText.setTextSize(15);
                 linearLayout.addView(btText);
 
+                TextView prioText = new TextView(this);
+                prioText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
+                prioText.setText("Priority  \t"+prioArray[i]);
+                prioText.setTextColor(parseColor("#000000"));
+                prioText.setTextSize(15);
+                linearLayout.addView(prioText);
+
                 TextView ctText = new TextView(this);
                 ctText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
                 ctText.setText("Completion Time \t"+ctArray[i]);
@@ -605,13 +592,13 @@ public class SimulationActivity extends AppCompatActivity implements View.OnClic
             ganttText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
             ganttText.setText("Gantt Chart");
             ganttText.setTextSize(20);
-            ganttText.setTextColor(parseColor("#008000"));
+            ganttText.setTextColor(parseColor("#FF8C00"));
             linearLayout.addView(ganttText);
 
             for(i=0;i<procount;i++) {
                 TextView colorText = new TextView(this);
                 colorText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
-                colorText.setText("Color " + i+"  -  "+colors[i]);
+                colorText.setText("Process " + i+"  -  "+colors[i]);
                 colorText.setTextSize(15);
                 linearLayout.addView(colorText);
             }
@@ -619,43 +606,43 @@ public class SimulationActivity extends AppCompatActivity implements View.OnClic
             for(i=0;i<procount;i++) {
                 if (i == 0) {
                     paint.setColor(parseColor("#FF0000"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10, 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 1) {
                     paint.setColor(parseColor("#FF8C00"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 2) {
                     paint.setColor(parseColor("#FFD700"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 3) {
                     paint.setColor(parseColor("#808000"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 4) {
                     paint.setColor(parseColor("#7CFC00"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 5) {
                     paint.setColor(parseColor("#3CB371"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 6) {
                     paint.setColor(parseColor("#00FF7F"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 7) {
                     paint.setColor(parseColor("#00CED1"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 8) {
                     paint.setColor(parseColor("#191970"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 9) {
                     paint.setColor(parseColor("#DA70D6"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
             }
 
@@ -720,6 +707,28 @@ public class SimulationActivity extends AppCompatActivity implements View.OnClic
                     startvar=time;
                     time++;
                     count+=1;
+
+                    while(k<procount){
+                        if(atArray[k]<=time){
+                            //nq(p[k].no);
+                            localsize++;
+                            vis[k]=1;
+                            k++;
+                        }
+                        else{
+                            break;
+                        }
+                    }
+
+                    tsArray[x]++;
+                    if(tsArray[x]>=btArray[x]) {
+                        ctArray[x] = time;
+                        tatArray[x] = ctArray[x] - atArray[x];
+                        wtArray[x] = tatArray[x] - btArray[x];
+                        done[x] = 1;
+                        localsize--;
+                    }
+
                     endvar=time;
 
                     if (x == 0) {
@@ -763,26 +772,6 @@ public class SimulationActivity extends AppCompatActivity implements View.OnClic
                         canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
                     }
 
-                    while(k<procount){
-                        if(atArray[k]<=time){
-                            //nq(p[k].no);
-                            localsize++;
-                            vis[k]=1;
-                            k++;
-                        }
-                        else{
-                            break;
-                        }
-                    }
-
-                    tsArray[x]++;
-                    if(tsArray[x]>=btArray[x]) {
-                        ctArray[x] = time;
-                        tatArray[x] = ctArray[x] - atArray[x];
-                        wtArray[x] = tatArray[x] - btArray[x];
-                        done[x] = 1;
-                        localsize--;
-                    }
                 }
                 else{
                     time++;
@@ -823,6 +812,13 @@ public class SimulationActivity extends AppCompatActivity implements View.OnClic
                 btText.setTextColor(parseColor("#000000"));
                 btText.setTextSize(15);
                 linearLayout.addView(btText);
+
+                TextView prioText = new TextView(this);
+                prioText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
+                prioText.setText("Priority  \t"+prioArray[i]);
+                prioText.setTextColor(parseColor("#000000"));
+                prioText.setTextSize(15);
+                linearLayout.addView(prioText);
 
                 TextView ctText = new TextView(this);
                 ctText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
@@ -881,13 +877,13 @@ public class SimulationActivity extends AppCompatActivity implements View.OnClic
             ganttText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
             ganttText.setText("Gantt Chart");
             ganttText.setTextSize(20);
-            ganttText.setTextColor(parseColor("#008000"));
+            ganttText.setTextColor(parseColor("#FF8C00"));
             linearLayout.addView(ganttText);
 
             for(i=0;i<procount;i++) {
                 TextView colorText = new TextView(this);
                 colorText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
-                colorText.setText("Color " + i+"  -  "+colors[i]);
+                colorText.setText("Process " + i+"  -  "+colors[i]);
                 colorText.setTextSize(15);
                 linearLayout.addView(colorText);
             }
@@ -1057,13 +1053,13 @@ public class SimulationActivity extends AppCompatActivity implements View.OnClic
             ganttText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
             ganttText.setText("Gantt Chart");
             ganttText.setTextSize(20);
-            ganttText.setTextColor(parseColor("#008000"));
+            ganttText.setTextColor(parseColor("#FF8C00"));
             linearLayout.addView(ganttText);
 
             for(i=0;i<procount;i++) {
                 TextView colorText = new TextView(this);
                 colorText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
-                colorText.setText("Color " + i+"  -  "+colors[i]);
+                colorText.setText("Process " + i+"  -  "+colors[i]);
                 colorText.setTextSize(15);
                 linearLayout.addView(colorText);
             }
@@ -1071,43 +1067,43 @@ public class SimulationActivity extends AppCompatActivity implements View.OnClic
             for(i=0;i<procount;i++) {
                 if (i == 0) {
                     paint.setColor(parseColor("#FF0000"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10, 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 1) {
                     paint.setColor(parseColor("#FF8C00"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 2) {
                     paint.setColor(parseColor("#FFD700"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 3) {
                     paint.setColor(parseColor("#808000"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 4) {
                     paint.setColor(parseColor("#7CFC00"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 5) {
                     paint.setColor(parseColor("#3CB371"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 6) {
                     paint.setColor(parseColor("#00FF7F"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 7) {
                     paint.setColor(parseColor("#00CED1"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 8) {
                     paint.setColor(parseColor("#191970"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
                 if (i == 9) {
                     paint.setColor(parseColor("#DA70D6"));
-                    canvas.drawRect(startArray[i] * 10 + 5, 10, endArray[i] * 10, 50, paint);
+                    canvas.drawRect(startArray[i] * 10 , 10, endArray[i] * 10, 50, paint);
                 }
             }
 
@@ -1142,6 +1138,8 @@ public class SimulationActivity extends AppCompatActivity implements View.OnClic
                 atArray[i]= Integer.parseInt(at[i].getText().toString());
                 btArray[i]= Integer.parseInt(bt[i].getText().toString());
                 tsArray[i]=0;
+                vis[i]=0;
+                done[i]=0;
                 number[i]=i;
             }
 
@@ -1168,6 +1166,28 @@ public class SimulationActivity extends AppCompatActivity implements View.OnClic
                     startvar=time;
                     time++;
                     count+=1;
+
+                    while(k<procount){
+                        if(atArray[k]<=time){
+                            //nq(p[k].no);
+                            localsize++;
+                            vis[k]=1;
+                            k++;
+                        }
+                        else{
+                            break;
+                        }
+                    }
+
+                    tsArray[x]++;
+                    if(tsArray[x]>=btArray[x]) {
+                        ctArray[x] = time;
+                        tatArray[x] = ctArray[x] - atArray[x];
+                        wtArray[x] = tatArray[x] - btArray[x];
+                        done[x] = 1;
+                        localsize--;
+                    }
+
                     endvar=time;
 
                     if (x == 0) {
@@ -1211,26 +1231,6 @@ public class SimulationActivity extends AppCompatActivity implements View.OnClic
                         canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
                     }
 
-                    while(k<procount){
-                        if(atArray[k]<=time){
-                            //nq(p[k].no);
-                            localsize++;
-                            vis[k]=1;
-                            k++;
-                        }
-                        else{
-                            break;
-                        }
-                    }
-
-                    tsArray[x]++;
-                    if(tsArray[x]>=btArray[x]) {
-                        ctArray[x] = time;
-                        tatArray[x] = ctArray[x] - atArray[x];
-                        wtArray[x] = tatArray[x] - btArray[x];
-                        done[x] = 1;
-                        localsize--;
-                    }
                 }
                 else{
                     time++;
@@ -1329,13 +1329,13 @@ public class SimulationActivity extends AppCompatActivity implements View.OnClic
             ganttText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
             ganttText.setText("Gantt Chart");
             ganttText.setTextSize(20);
-            ganttText.setTextColor(parseColor("#008000"));
+            ganttText.setTextColor(parseColor("#FF8C00"));
             linearLayout.addView(ganttText);
 
             for(i=0;i<procount;i++) {
                 TextView colorText = new TextView(this);
                 colorText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
-                colorText.setText("Color " + i+"  -  "+colors[i]);
+                colorText.setText("Process " + i+"  -  "+colors[i]);
                 colorText.setTextSize(15);
                 linearLayout.addView(colorText);
             }
@@ -1346,6 +1346,271 @@ public class SimulationActivity extends AppCompatActivity implements View.OnClic
             linearLayout.addView(iV);
 
         }
+
+        if(v==btnrr){
+            tq= Integer.parseInt(rrtq.getText().toString());
+
+            time=0;
+            localsize=0;
+            size=0;
+            avgwt=0;
+            avgtat=0;
+            startvar=0;
+            endvar=0;
+            count=0;
+            procount = Integer.parseInt(nopro.getText().toString());
+            String test="";
+
+            Paint paint = new Paint();
+            int i;
+
+            for(i=0;i<procount;i++) {
+                //test+=at[i].getText()+" "+bt[i].getText()+" ";
+                atArray[i]= Integer.parseInt(at[i].getText().toString());
+                btArray[i]= Integer.parseInt(bt[i].getText().toString());
+                tsArray[i]=0;
+                number[i]=i;
+            }
+
+            Bitmap bg = Bitmap.createBitmap(600, 100, Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(bg);
+            canvas.drawColor(LTGRAY);
+
+            while(done(procount)==0){
+                while(k<procount){
+                    if(atArray[k]<=time){
+                        nq(number[i]);
+                        localsize++;
+                        vis[k]=1;
+                        k++;
+                    }
+                    else{
+                        break;
+                    }
+                }
+
+                if(localsize!=0){
+                    x=dq();
+                    startvar=time;
+                    time+=tq;
+                    count+=1;
+
+                    while(k<procount){
+                        if(atArray[k]<=time){
+                            nq(number[k]);
+                            localsize++;
+                            vis[k]=1;
+                            k++;
+                        }
+                        else{
+                            break;
+                        }
+                    }
+
+                    tsArray[x]+=tq;
+                    if(tsArray[x]>=btArray[x]) {
+                        time-=(tsArray[x]-btArray[x]);
+                        ctArray[x] =time;
+                        tatArray[x] = ctArray[x] - atArray[x];
+                        wtArray[x] = tatArray[x] - btArray[x];
+                        done[x] = 1;
+                        localsize--;
+                    }
+                    else{
+                        nq(x);
+                    }
+
+                    endvar=time;
+
+                    if (x == 0) {
+                        paint.setColor(parseColor("#FF0000"));
+                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
+                    }
+                    if (x == 1) {
+                        paint.setColor(parseColor("#FF8C00"));
+                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
+                    }
+                    if (x == 2) {
+                        paint.setColor(parseColor("#FFD700"));
+                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
+                    }
+                    if (x == 3) {
+                        paint.setColor(parseColor("#808000"));
+                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
+                    }
+                    if (x == 4) {
+                        paint.setColor(parseColor("#7CFC00"));
+                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
+                    }
+                    if (x == 5) {
+                        paint.setColor(parseColor("#3CB371"));
+                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
+                    }
+                    if (x == 6) {
+                        paint.setColor(parseColor("#00FF7F"));
+                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
+                    }
+                    if (x == 7) {
+                        paint.setColor(parseColor("#00CED1"));
+                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
+                    }
+                    if (x == 8) {
+                        paint.setColor(parseColor("#191970"));
+                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
+                    }
+                    if (x == 9) {
+                        paint.setColor(parseColor("#DA70D6"));
+                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
+                    }
+
+                }
+                else{
+                    time++;
+                    while(k<procount){
+                        if(atArray[k]<=time){
+                            nq(number[k]);
+                            localsize++;
+                            vis[k]=1;
+                            k++;
+                        }
+                        else{
+                            break;
+                        }
+                    }
+                }
+            }
+
+            linearLayout.removeAllViews();
+
+            for (i = 0; i < procount; i++) {
+                TextView headText = new TextView(this);
+                headText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
+                headText.setText("Process " + i);
+                headText.setTextSize(20);
+                headText.setTextColor(parseColor("#008000"));
+                linearLayout.addView(headText);
+
+                TextView atText = new TextView(this);
+                atText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
+                atText.setText("Arrival Time  \t"+atArray[i]);
+                atText.setTextColor(parseColor("#000000"));
+                atText.setTextSize(15);
+                linearLayout.addView(atText);
+
+                TextView btText = new TextView(this);
+                btText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
+                btText.setText("Burst Time \t"+btArray[i]);
+                btText.setTextColor(parseColor("#000000"));
+                btText.setTextSize(15);
+                linearLayout.addView(btText);
+
+                TextView ctText = new TextView(this);
+                ctText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
+                ctText.setText("Completion Time \t"+ctArray[i]);
+                ctText.setTextSize(15);
+                ctText.setTextColor(parseColor("#000000"));
+                linearLayout.addView(ctText);
+
+                TextView tatText = new TextView(this);
+                tatText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
+                tatText.setText("Turn-Around Time \t"+tatArray[i]);
+                tatText.setTextSize(15);
+                tatText.setTextColor(parseColor("#000000"));
+                linearLayout.addView(tatText);
+                avgtat+=tatArray[i];
+
+                TextView wtText = new TextView(this);
+                wtText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
+                wtText.setText("Waiting Time \t"+wtArray[i]);
+                wtText.setTextSize(15);
+                wtText.setTextColor(parseColor("#000000"));
+                linearLayout.addView(wtText);
+                avgwt+=wtArray[i];
+            }
+
+            avgwt/=procount;
+            avgtat/=procount;
+
+            TextView avgtatText = new TextView(this);
+            avgtatText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
+            avgtatText.setText("Average Turn-Around Time \t"+avgtat);
+            avgtatText.setTextSize(20);
+            avgtatText.setTextColor(parseColor("#008000"));
+            linearLayout.addView(avgtatText);
+
+            TextView avgwtText = new TextView(this);
+            avgwtText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
+            avgwtText.setText("Average Waiting Time \t"+avgwt);
+            avgwtText.setTextSize(20);
+            avgwtText.setTextColor(parseColor("#008000"));
+            linearLayout.addView(avgwtText);
+
+            String[] colors=new String[100];
+            colors[0]="Red";
+            colors[1]="dark orange";
+            colors[2]="gold";
+            colors[3]="olive";
+            colors[4]="lawn green";
+            colors[5]="medium sea green";
+            colors[6]="spring green";
+            colors[7]="dark turquoise";
+            colors[8]="midnight blue";
+            colors[9]="orchid";
+
+            TextView ganttText = new TextView(this);
+            ganttText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
+            ganttText.setText("Gantt Chart");
+            ganttText.setTextSize(20);
+            ganttText.setTextColor(parseColor("#FF8C00"));
+            linearLayout.addView(ganttText);
+
+            for(i=0;i<procount;i++) {
+                TextView colorText = new TextView(this);
+                colorText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
+                colorText.setText("Process " + i+"  -  "+colors[i]);
+                colorText.setTextSize(15);
+                linearLayout.addView(colorText);
+            }
+
+            ImageView iV = new ImageView(this);
+            iV.setImageBitmap(bg);
+
+            linearLayout.addView(iV);
+
+        }
+
+        if(v==txtfcfs) {
+            Intent intent=new Intent(SimulationActivity.this,fcfsActivity.class);
+            startActivity(intent);
+        }
+        if(v==txtsjf) {
+            Intent intent=new Intent(SimulationActivity.this,sjfActivity.class);
+            startActivity(intent);
+        }
+        if(v==txtsrtf) {
+            Intent intent=new Intent(SimulationActivity.this,srtfActivity.class);
+            startActivity(intent);
+        }
+        if(v==txtnpprio) {
+            Intent intent=new Intent(SimulationActivity.this,npprioActivity.class);
+            startActivity(intent);
+        }
+        if(v==txtpempprio) {
+            Intent intent=new Intent(SimulationActivity.this,pempprioActivity.class);
+            startActivity(intent);
+        }
+        if(v==txtrr) {
+            Intent intent=new Intent(SimulationActivity.this,rrActivity.class);
+            startActivity(intent);
+        }
+        /*if(v==txtmlq) {
+            Intent intent=new Intent(SimulationActivity.this,mlqActivity.class);
+            startActivity(intent);
+        }*/
+    }
+}
+
+
 
         /*if(v==btnmlq){
             tq= Integer.parseInt(rrtq.getText().toString());
@@ -1547,267 +1812,6 @@ public class SimulationActivity extends AppCompatActivity implements View.OnClic
             linearLayout.addView(avgwtText);
         }
         */
-
-        if(v==btnrr){
-            tq= Integer.parseInt(rrtq.getText().toString());
-
-            time=0;
-            localsize=0;
-            size=0;
-            avgwt=0;
-            avgtat=0;
-            startvar=0;
-            endvar=0;
-            count=0;
-            procount = Integer.parseInt(nopro.getText().toString());
-            String test="";
-
-            Paint paint = new Paint();
-            int i;
-
-            for(i=0;i<procount;i++) {
-                //test+=at[i].getText()+" "+bt[i].getText()+" ";
-                atArray[i]= Integer.parseInt(at[i].getText().toString());
-                btArray[i]= Integer.parseInt(bt[i].getText().toString());
-                tsArray[i]=0;
-                number[i]=i;
-            }
-
-            Bitmap bg = Bitmap.createBitmap(600, 100, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(bg);
-            canvas.drawColor(LTGRAY);
-
-            while(done(procount)==0){
-                while(k<procount){
-                    if(atArray[k]<=time){
-                        nq(number[i]);
-                        localsize++;
-                        vis[k]=1;
-                        k++;
-                    }
-                    else{
-                        break;
-                    }
-                }
-
-                if(localsize!=0){
-                    x=dq();
-                    startvar=time;
-                    time+=tq;
-                    count+=1;
-                    endvar=time;
-
-                    if (x == 0) {
-                        paint.setColor(parseColor("#FF0000"));
-                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
-                    }
-                    if (x == 1) {
-                        paint.setColor(parseColor("#FF8C00"));
-                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
-                    }
-                    if (x == 2) {
-                        paint.setColor(parseColor("#FFD700"));
-                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
-                    }
-                    if (x == 3) {
-                        paint.setColor(parseColor("#808000"));
-                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
-                    }
-                    if (x == 4) {
-                        paint.setColor(parseColor("#7CFC00"));
-                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
-                    }
-                    if (x == 5) {
-                        paint.setColor(parseColor("#3CB371"));
-                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
-                    }
-                    if (x == 6) {
-                        paint.setColor(parseColor("#00FF7F"));
-                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
-                    }
-                    if (x == 7) {
-                        paint.setColor(parseColor("#00CED1"));
-                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
-                    }
-                    if (x == 8) {
-                        paint.setColor(parseColor("#191970"));
-                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
-                    }
-                    if (x == 9) {
-                        paint.setColor(parseColor("#DA70D6"));
-                        canvas.drawRect(startvar * 10, 10, endvar * 10, 50, paint);
-                    }
-
-                    while(k<procount){
-                        if(atArray[k]<=time){
-                            nq(number[k]);
-                            localsize++;
-                            vis[k]=1;
-                            k++;
-                        }
-                        else{
-                            break;
-                        }
-                    }
-                    tsArray[x]+=tq;
-                    if(tsArray[x]>=btArray[x]) {
-                        time-=(tsArray[x]-btArray[x]);
-                        ctArray[x] =time;
-                        tatArray[x] = ctArray[x] - atArray[x];
-                        wtArray[x] = tatArray[x] - btArray[x];
-                        done[x] = 1;
-                        localsize--;
-                    }
-                    else{
-                        nq(x);
-                    }
-
-                }
-                else{
-                    time++;
-                    while(k<procount){
-                        if(atArray[k]<=time){
-                            nq(number[k]);
-                            localsize++;
-                            vis[k]=1;
-                            k++;
-                        }
-                        else{
-                            break;
-                        }
-                    }
-                }
-            }
-
-            linearLayout.removeAllViews();
-
-            for (i = 0; i < procount; i++) {
-                TextView headText = new TextView(this);
-                headText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
-                headText.setText("Process " + i);
-                headText.setTextSize(20);
-                headText.setTextColor(parseColor("#008000"));
-                linearLayout.addView(headText);
-
-                TextView atText = new TextView(this);
-                atText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
-                atText.setText("Arrival Time  \t"+atArray[i]);
-                atText.setTextColor(parseColor("#000000"));
-                atText.setTextSize(15);
-                linearLayout.addView(atText);
-
-                TextView btText = new TextView(this);
-                btText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
-                btText.setText("Burst Time \t"+btArray[i]);
-                btText.setTextColor(parseColor("#000000"));
-                btText.setTextSize(15);
-                linearLayout.addView(btText);
-
-                TextView ctText = new TextView(this);
-                ctText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
-                ctText.setText("Completion Time \t"+ctArray[i]);
-                ctText.setTextSize(15);
-                ctText.setTextColor(parseColor("#000000"));
-                linearLayout.addView(ctText);
-
-                TextView tatText = new TextView(this);
-                tatText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
-                tatText.setText("Turn-Around Time \t"+tatArray[i]);
-                tatText.setTextSize(15);
-                tatText.setTextColor(parseColor("#000000"));
-                linearLayout.addView(tatText);
-                avgtat+=tatArray[i];
-
-                TextView wtText = new TextView(this);
-                wtText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
-                wtText.setText("Waiting Time \t"+wtArray[i]);
-                wtText.setTextSize(15);
-                wtText.setTextColor(parseColor("#000000"));
-                linearLayout.addView(wtText);
-                avgwt+=wtArray[i];
-            }
-
-            avgwt/=procount;
-            avgtat/=procount;
-
-            TextView avgtatText = new TextView(this);
-            avgtatText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
-            avgtatText.setText("Average Turn-Around Time \t"+avgtat);
-            avgtatText.setTextSize(20);
-            avgtatText.setTextColor(parseColor("#008000"));
-            linearLayout.addView(avgtatText);
-
-            TextView avgwtText = new TextView(this);
-            avgwtText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
-            avgwtText.setText("Average Waiting Time \t"+avgwt);
-            avgwtText.setTextSize(20);
-            avgwtText.setTextColor(parseColor("#008000"));
-            linearLayout.addView(avgwtText);
-
-            String[] colors=new String[100];
-            colors[0]="Red";
-            colors[1]="dark orange";
-            colors[2]="gold";
-            colors[3]="olive";
-            colors[4]="lawn green";
-            colors[5]="medium sea green";
-            colors[6]="spring green";
-            colors[7]="dark turquoise";
-            colors[8]="midnight blue";
-            colors[9]="orchid";
-
-            TextView ganttText = new TextView(this);
-            ganttText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
-            ganttText.setText("Gantt Chart");
-            ganttText.setTextSize(20);
-            ganttText.setTextColor(parseColor("#008000"));
-            linearLayout.addView(ganttText);
-
-            for(i=0;i<procount;i++) {
-                TextView colorText = new TextView(this);
-                colorText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
-                colorText.setText("Color " + i+"  -  "+colors[i]);
-                colorText.setTextSize(15);
-                linearLayout.addView(colorText);
-            }
-
-            ImageView iV = new ImageView(this);
-            iV.setImageBitmap(bg);
-
-            linearLayout.addView(iV);
-
-        }
-
-        if(v==txtfcfs) {
-            Intent intent=new Intent(SimulationActivity.this,fcfsActivity.class);
-            startActivity(intent);
-        }
-        if(v==txtsjf) {
-            Intent intent=new Intent(SimulationActivity.this,sjfActivity.class);
-            startActivity(intent);
-        }
-        if(v==txtsrtf) {
-            Intent intent=new Intent(SimulationActivity.this,srtfActivity.class);
-            startActivity(intent);
-        }
-        if(v==txtnpprio) {
-            Intent intent=new Intent(SimulationActivity.this,npprioActivity.class);
-            startActivity(intent);
-        }
-        if(v==txtpempprio) {
-            Intent intent=new Intent(SimulationActivity.this,pempprioActivity.class);
-            startActivity(intent);
-        }
-        if(v==txtrr) {
-            Intent intent=new Intent(SimulationActivity.this,rrActivity.class);
-            startActivity(intent);
-        }
-        /*if(v==txtmlq) {
-            Intent intent=new Intent(SimulationActivity.this,mlqActivity.class);
-            startActivity(intent);
-        }*/
-    }
-}
 
 ;
 
